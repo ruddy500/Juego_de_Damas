@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Damas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="layout-grid">
+        <!-- Izquierda: Controles -->
+        <aside class="panel">
+            <h1>Juego de Damas</h1>
+            <div class="subtitle">Metodologías de Búsqueda</div>
+
+            <div class="form-group">
+                <label>Seleccione el adversario:</label>
+                
+                <!-- DROPDOWN PERSONALIZADO -->
+                <div class="custom-select-wrapper" id="custom-select-wrapper">
+                    <div class="custom-select-trigger" id="custom-select-trigger">Metodología Poda Alfa-Beta</div>
+                    <div class="custom-options">
+                        <div class="custom-option" data-value="minimaxClassic">Metodología Min-Max</div>
+                        <div class="custom-option selected" data-value="alphabeta">Metodología Poda Alfa-Beta</div>
+                    </div>
+                </div>
+                
+                <!-- Select Nativo Oculto (Mantiene la lógica intacta) -->
+                <select id="ai-difficulty" style="display: none;">
+                    <option value="minimaxClassic">Metodología Min-Max</option>
+                    <option value="alphabeta" selected>Metodología Poda Alfa-Beta</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary" onclick="app.resetGame()">Iniciar Partida</button>
+        </aside>
+
+        <!-- Centro: Tablero -->
+        <main class="board-container">
+            <div class="board">
+                <div class="squares-layer" id="squares-layer"></div>
+                <div class="pieces-layer" id="pieces-layer"></div>
+            </div>
+        </main>
+
+        <!-- Derecha: Estado -->
+        <aside class="panel">
+            <div class="turn-box">
+                <div>
+                    <div class="subtitle" style="margin-bottom: 10px;">Estado de Juego</div>
+                    <div class="turn-text p1" id="turn-display">TURNO: JUGADOR</div>
+                </div>
+                
+                <div class="stats-panel" id="ai-stats">
+                    Métricas deL Adversario<br>
+                    Metodología: <span class="stats-highlight">-</span><br>
+                    Nodos Evaluados: <span class="stats-highlight" id="stat-nodes">0</span><br>
+                    Tiempo: <span class="stats-highlight" id="stat-time">0 ms</span>
+                </div>
+            </div>
+
+            <div class="graveyard-container">
+                <div class="grave-box">
+                    <div class="grave-title">Fichas Perdidas (Jugador)</div>
+                    <div class="grave-grid" id="grave-p1"></div>
+                </div>
+                <div class="grave-box">
+                    <div class="grave-title">Fichas Perdidas (Adversario)</div>
+                    <div class="grave-grid" id="grave-p2"></div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
