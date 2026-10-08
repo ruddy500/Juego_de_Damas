@@ -14,7 +14,7 @@
 2. Abrir **Visual Studio Code**.
 
 3. En Visual Studio Code, seleccionar:
-   **Archivo → Abrir carpeta**.
+   **Archivo Abrir carpeta**.
 
 4. Seleccionar la carpeta descomprimida:
    `Juego_de_Damas`
