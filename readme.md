@@ -1,6 +1,6 @@
 # Juego de Damas
 
-## ▶Ejecutar con Visual Studio Code
+## Ejecutar con Visual Studio Code
 
 ### Requisitos
 
